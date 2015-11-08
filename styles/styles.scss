@@ -393,15 +393,26 @@ footer	{
 
  	}
  	
-
  }
 
  /* Landscape phones and down */
  @media (max-width: 500px) {
  	form.questionsFlex {
  		flex-direction: column;
+ 		justify-content: center;
+ 		align-items: center;
  	}
 
+ 	.submitSection {
+ 		display: flex;
+ 		align-items: center;
+ 	}
+
+ 	.submitResults {
+ 		padding: 15px 10px;
+ 		border-radius: 0;
+ 	}
+ 
  	
 
  }
