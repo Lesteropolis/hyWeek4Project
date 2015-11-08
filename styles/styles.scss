@@ -1,0 +1,412 @@
+@import "_setup.scss";
+
+//Notes
+// [1] .selected is a CLASS that jQuery assigns to an answer when it's clicked by a user to show that "Hey this is the answer you chose". 
+
+// [2] There are two submit buttons (one at the top and one at the bottom) with a CLASS of "start". One has a VALUE of "Get started" and the other is "Start again". The CLASS resets the entire page and scrolls to Question 1. I'm not sure if a <button> element is better to use or not. If you think a <button> is better, then just assign it a CLASS of "start" and the scroll and reset should still work.
+
+
+//MIXINS
+$red: #CC0202;
+$darkBlue: #1A3B69;
+$lightBlue: #4A90E2;
+$darkGrey: #333333;
+$answer: #FFFFFF;
+$lightGrey: #3C3D41;
+
+//VARIABLES
+
+//GENERAL
+
+
+
+h1 {
+	font-family: 'Montserrat', sans-serif;	
+	font-size: 52px;
+	color: $lightGrey;
+	line-height: 55px;
+	margin: 0px;
+}
+
+h2 {
+	font-family: 'Montserrat', sans-serif;	
+	font-size: 52px;
+	color: #FFFFFF;
+	line-height: 55px;
+}
+
+h3 {
+	font-family: 'Montserrat', sans-serif;	
+	font-size: 11px;
+	color: #FFFFFF;
+	letter-spacing: 2px;
+	line-height: 14px;
+	margin: 0;
+    padding: 80px 0px 0px 0px;
+}
+
+h4 {
+	font-family: 'Montserrat', sans-serif;	
+	font-size: 11px;
+	color: #3C3D41;
+	letter-spacing: 2px;
+	line-height: 14px;
+	text-transform: uppercase;
+}
+
+label {
+	font-family: 'Montserrat', sans-serif;	
+
+}
+.subtext {
+	font-family: 'Montserrat', sans-serif;	
+	// font-family: 'PT Serif', serif;
+	font-size: 20px;
+	color: #656B6F;
+	line-height: 26px;
+	margin-bottom: 35px;
+}
+
+.wrapper {
+	max-width: 1024px;
+	margin: 0 auto;
+	padding: 0 30px;
+}
+
+.selected label {
+	background: white;
+	color: black;
+}
+
+.hidden {
+	display: none;
+}
+
+section {
+	color: #fff;
+	padding: 60px 0px 90px 0px;
+}
+
+section.aura {
+	background: rgba(191,33,34,1);
+}
+
+section.yogiPower {
+	background: rgba(21,43,85,1);
+}
+
+section.favSpot {
+	background: rgba(59,122,219,1);
+
+}
+
+section.music {
+	background: rgba(38,38,38,1);
+}
+
+section.results {
+	color: black;
+	margin: 0px;
+    padding: 0px;
+    h1 {
+    	margin: 0px;
+    	text-align: center;
+    }
+
+    h2 {
+    	color: $lightBlue;
+    	font-size: 20px;
+    	text-align: center;
+    }
+    h3 {
+    	color: $darkGrey;
+    	text-transform: uppercase;
+    	text-align: center;
+    	padding: 0 0 20px 0;
+    	::before {
+    		content: ' ';
+		    background-color: red;
+		    height: 1px;
+		    display: block;
+    	}
+    }
+
+    p {
+    	text-align: center;
+    	padding: 0 15%;
+    }
+}
+
+
+
+.yogiName {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+    align-items: center;
+    align-content: center;
+
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: url(../images/background.png) no-repeat;	
+
+}
+
+
+
+input[type=radio]{
+	display: none;
+}
+
+form.questionsFlex {
+	display: flex;
+	flex-wrap: wrap;
+	& > * {
+		flex: 1 0 calc(33% - 70px);
+    	padding: 0px 40px 40px 0px;
+	}
+}
+
+
+// Buttons
+
+.start {
+	background: #CC0202;
+	border-radius: 40px;
+	font-family: 'Montserrat', sans-serif;	
+	font-weight: 700;
+	font-size: 10px;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	letter-spacing: 2px;
+	line-height: 10px;
+	border-style: none;
+	padding: 20px 20%;
+}
+
+.startAgain {
+	background: $darkBlue;
+	border-radius: 40px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;	
+	font-size: 10px;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	letter-spacing: 2px;
+	line-height: 10px;
+	border-style: none;
+	margin: 10px 0 90px 0;
+	padding: 20px 90px;
+}
+
+label {
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    display: inline-block;
+	background: rgba(255,255,255,0.10);
+	border: 1px solid #FFFFFF;
+	border-radius: 40px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	font-size: 10px;
+	color: #FFFFFF;
+	letter-spacing: 2px;
+	line-height: 10px;
+	padding: 18px 40px;
+	text-transform: uppercase;
+	cursor: pointer;
+	}
+
+.result {
+	display: none;
+}
+
+.guru .text {
+	flex: 1 1 20em;
+}
+
+
+.guru {
+	padding: 30px 0px 50px 0px;
+	text-align: right;
+}
+
+
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
+}
+
+section.submit {
+	display: flex;
+}
+
+.submitResults {
+ 	background: #CC0202;
+    border: 1px solid #FFFFFF;
+    border-radius: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+    line-height: 10px;
+    padding: 30px 60px;
+    text-transform: uppercase;
+	margin: 40px 0px 10px 0px;
+}
+
+.plus {
+	font-size: 50px;
+	color: $lightGrey;
+}
+
+.startAgainSection {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+// Footer
+
+footer	{
+	background: $red;
+	padding: 40px;
+	p {
+		color: white;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 12px;
+		line-height: 20px;
+		margin: 0px;
+		text-align: center;
+	}
+}
+
+// Social media
+
+.btnz {
+   display: block;
+   float: left;
+   padding: 10px 15px;
+   border:none;
+   background-color: #ececec;
+   text-decoration: none;
+   font-size: 18px;
+   color: #FFF;
+}
+ 
+.btnz:hover {
+   color: #efefef;
+}
+
+.facebook {
+   background-color: #3b5998;
+}
+ 
+.gplus {
+   background-color: #dd4b39;
+}
+ 
+.twitter {
+   background-color: #55acee;
+}
+ 
+ 
+.pinterest {
+   background-color: #cc2127;
+}
+ 
+.linkedin {
+   background-color: #0077b5;
+}
+
+.socialfloat {
+    display: block;
+    right: 0;
+    top: 35%;
+    position: fixed;
+    z-index: 9999;
+}
+ 
+.socialfloat .fbtn {
+   width: 50px;
+   height: 50px;
+   display: block;
+   color: #fff;
+   text-align: center;
+}
+ 
+.socialfloat .fbtn i {
+   font-size: 30px;
+   line-height: 50px;
+}
+ 
+ //MEDIA QUERIES
+
+ /* Portrait tablet and small desktops */
+ @media (max-width: 995px) {
+
+ 	.header {
+ 	    flex-direction: column;
+ 		text-align: center;
+ 	}
+
+ 	h1, h2, h3, h4 {
+ 		text-align: center;
+ 	}
+
+ 	h3 {
+ 		font-size: 2.5rem;
+ 	}
+
+ 	h4 {
+ 		font-size: 2rem;
+ 	}
+
+ 	form.questionsFlex {
+ 		& > * {
+ 			flex: 1 0 calc(50% - 70px);
+ 		}
+ 	}
+  } 
+
+ /* Landscape phone to portrait tablet */
+ @media (max-width: 768px) {
+ 	.yogiName {
+ 		flex-direction: column;
+
+ 	}
+ 	
+
+ }
+
+ /* Landscape phones and down */
+ @media (max-width: 500px) {
+ 	form.questionsFlex {
+ 		flex-direction: column;
+ 	}
+
+ 	
+
+ }
+
