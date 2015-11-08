@@ -559,10 +559,7 @@ footer p {
     text-align: center;
   }
   h3 {
-    font-size: 2.5rem;
-  }
-  h4 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   form.questionsFlex > * {
     -webkit-box-flex: 1;
