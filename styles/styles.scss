@@ -401,6 +401,10 @@ footer	{
  		flex-direction: column;
  		justify-content: center;
  		align-items: center;
+
+ 		a {
+ 			width: 100%;
+ 		}
  	}
 
  	.submitSection {
@@ -412,8 +416,5 @@ footer	{
  		padding: 15px 10px;
  		border-radius: 0;
  	}
- 
- 	
-
  }
 

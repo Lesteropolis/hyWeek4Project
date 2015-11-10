@@ -597,6 +597,9 @@ footer p {
         -ms-flex-align: center;
             align-items: center;
   }
+  form.questionsFlex a {
+    width: 100%;
+  }
   .submitSection {
     display: -webkit-box;
     display: -webkit-flex;
