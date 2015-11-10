@@ -6,12 +6,11 @@ $(function(){
 
 	//Social Media
 	$('.share').click(function() {
-     var NWin = window.open($(this).prop('href'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
-     if (window.focus)
-     {
-       NWin.focus();
-     }
-     return false;
+		var NWin = window.open($(this).prop('href'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+		if (window.focus) {
+			NWin.focus();
+		}
+		return false;
     });
 
 	//Cacheing the selectors
@@ -91,7 +90,7 @@ $(function(){
 	}
 
 	//Question 1: Assigning the user's choice to a variable
-	$('input[name="question1"').on('change', function(event){
+	$('input[name="question1"]').on('change', function(event){
 		event.preventDefault();
 		$('.aura a').removeClass("selected");
 		$(this).parent().addClass("selected");
@@ -104,7 +103,7 @@ $(function(){
 	});
 
 	//Question 2: Assigning the user's choice to a variable
-	$('input[name="question2"').on('change', function(event){
+	$('input[name="question2"]').on('change', function(event){
 		event.preventDefault();
 		$('.yogiPower a').removeClass("selected");
 		$(this).parent().addClass("selected");
@@ -116,7 +115,7 @@ $(function(){
 	});
 
 	//Question 3: Assigning the user's choice to a variable
-	$('input[name="question3"').on('change', function(event){
+	$('input[name="question3"]').on('change', function(event){
 		event.preventDefault();
 		$('.favSpot a').removeClass("selected");
 		$(this).parent().addClass("selected");
@@ -129,7 +128,7 @@ $(function(){
 	});
 
 	//Question 4: Assigning the user's choice to a variable
-	$('input[name="question4"').on('change', function(event){
+	$('input[name="question4"]').on('change', function(event){
 		event.preventDefault();
 		$('.music a').removeClass("selected");
 		$(this).parent().addClass("selected");
